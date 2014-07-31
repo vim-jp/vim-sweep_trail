@@ -15,5 +15,11 @@ command! -bar SweepTrail call sweep_trail#sweep()
 
 nnoremap <silent> <Plug>(sweep_trail) :<C-u>SweepTrail<CR>
 
+if !hasmapto('<Plug>(sweep_trail)')
+      \  && (!exists('g:sweep_trail_no_default_key_mappings')
+      \      || !g:sweep_trail_no_default_key_mappings)
+  silent! nmap <unique> <Leader>sw <Plug>(sweep_trail)
+endif
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
