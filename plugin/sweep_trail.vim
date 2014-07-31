@@ -11,7 +11,7 @@ let g:loaded_sweep_trail = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
-" ここにプラグインのコードを書く
+command! -bar SweepTrail call sweep_trail#sweep()
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
