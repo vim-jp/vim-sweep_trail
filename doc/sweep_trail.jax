@@ -1,0 +1,86 @@
+*sweep_trail.txt*	行末の空白を自動的に取り除きます。
+
+Version: 1.0
+Author : thinca <thinca+vim@gmail.com>
+License: VIM LICENSE
+
+==============================================================================
+目次						*sweep_trail-contents*
+
+概要				|sweep_trail-introduction|
+インターフェース		|sweep_trail-interface|
+  コマンド			  |sweep_trail-commands|
+  関数				  |sweep_trail-functions|
+  キーマッピング		  |sweep_trail-key-mappings|
+カスタマイズ			|sweep_trail-customizing|
+更新履歴			|sweep_trail-changelog|
+
+
+
+==============================================================================
+概要						*sweep_trail-introduction*
+
+*sweep_trail.vim* は、自動的に行末の空白文字を取り除くためのプラグインです。
+このプラグインをインストールすると、|g:sweep_trail#enable| が有効である時、
+バッファの保存時に自動的に行末の空白文字を取り除きます。
+また、|:SweepTrail| コマンドを使うことで手動で取り除くこともできます。
+
+要件:
+- Vim 7.0 以降
+
+最新版:
+https://github.com/vim-jp/vim-sweep_trail
+
+
+
+==============================================================================
+インターフェース				*sweep_trail-interface*
+
+------------------------------------------------------------------------------
+コマンド					*sweep_trail-commands*
+
+:SweepTrail					*:SweepTrail*
+	バッファ全体の行末の空白を取り除きます。
+
+------------------------------------------------------------------------------
+関数						*sweep_trail-functions*
+
+sweep_trail#sweep()				*sweep_trail#sweep()*
+	|:SweepTrail| の関数版です。
+
+------------------------------------------------------------------------------
+キーマッピング					*sweep_trail-key-mappings*
+
+<Plug>(sweep_trail)				*<Plug>(sweep_trail)*
+	|:SweepTrail| を実行します。
+
+				      *g:sweep_trail_no_default_key_mappings*
+以下のキーマッピングは、既に定義されていたり
+g:sweep_trail_no_default_key_mappings に 1 が設定されていると定義されません。
+
+{lhs}			{rhs}
+--------		-----------------------------
+<Leader>sw		<Plug>(sweep_trail)
+
+
+
+==============================================================================
+カスタマイズ					*sweep_trail-customizing*
+
+g:sweep_trail#enable				*g:sweep_trail#enable*
+	この値が 0 でない場合、ファイルの保存前に自動的に |:SweepTrail| を実行
+	します。
+	デフォルトは 1 です。
+
+
+
+==============================================================================
+更新履歴					*sweep_trail-changelog*
+
+1.0	
+	- 初版。
+
+
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
