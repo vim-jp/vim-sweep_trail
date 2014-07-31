@@ -14,5 +14,11 @@ function! sweep_trail#sweep()
   %substitute/\s\+$//e
 endfunction
 
+function! sweep_trail#auto_sweep()
+  if g:sweep_trail#enable
+    call sweep_trail#sweep()
+  endif
+endfunction
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
