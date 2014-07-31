@@ -21,5 +21,10 @@ if !hasmapto('<Plug>(sweep_trail)')
   silent! nmap <unique> <Leader>sw <Plug>(sweep_trail)
 endif
 
+augroup plugin-sweep_trail
+  autocmd!
+  autocmd BufWritePre * call sweep_trail#auto_sweep()
+augroup END
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
