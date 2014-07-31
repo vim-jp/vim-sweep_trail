@@ -13,5 +13,7 @@ set cpo&vim
 
 command! -bar SweepTrail call sweep_trail#sweep()
 
+nnoremap <silent> <Plug>(sweep_trail) :<C-u>SweepTrail<CR>
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
