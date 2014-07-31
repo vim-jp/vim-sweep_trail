@@ -6,6 +6,10 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
+if !exists('g:sweep_trail#enable')
+  let g:sweep_trail#enable = 1
+endif
+
 function! sweep_trail#sweep()
   %substitute/\s\+$//e
 endfunction
